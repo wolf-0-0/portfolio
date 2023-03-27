@@ -23,13 +23,13 @@ section {
 
 
 section * {
-    border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 h1 {
     font-family: "Halant";
     font-weight: 900;
-    font-size: 5vw;
+    font-size: 5.8rem;
     line-height: 90%;
     padding-left: 1%;
 }
@@ -103,11 +103,12 @@ hr {
     grid-row: 3 / span 5;
     display: flex;
     justify-content: center;
+    margin-top: 6vh;
 }
 
 .picture img {
     max-width: 100%;
-    height: auto;
+    min-height: 40vh;
     background-color: #D9D9D9;
     box-shadow: -8px -8px 2px 0px #C8C8C8;
 }
@@ -463,16 +464,15 @@ h6 {
 }
 
 .projects .project-content p {
-
     font-size: 16px;
-    height: 17vh;
+    height: 25%;
     width: 90%;
 }
 
 .project-content a {
     background-color: #068488;
     display: flex;
-    align-self: flex-start;
+    align-self: flex-end;
     align-items: center;
     text-decoration: none;
     color: #EEE8A9;
@@ -630,9 +630,28 @@ svg {
     transform: scale(1.1);
 }
 
+.address a {
+    display: flex;
+    background-color: #068488;
+    text-decoration: none;
+    justify-content: center;
+    align-items: center;
+    color: #EEE8A9;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+    font-size: 1rem;
+    padding-inline: 1%;
+    height: 10%;
+    width: auto;
+}
+
+.address a:hover {
+    text-shadow: #EEE8A9 0 0 1.5px;
+}
+
 /*#endregion*/
 /*#region MEDIA ONLY*/
-@media only screen and (max-width:1499px) {
+/*@media only screen and (max-width:1499px) {
     section{
         height: 810px;
         width: 92vw;
@@ -645,19 +664,8 @@ svg {
         width: fit-content;
     }
 
-    .submit-button {
-        float: right;
-        margin-right: 3%;
-        margin-top: 2%;
-        padding: 1%;
-        padding-inline: 2%;
-        margin-bottom: 4%;
-        background-color: #069499;
-        border: 1px solid #068488;
-        color: #EEE8A9;
-    }
-}
-@media only screen and (max-width:759px) {
+}*/
+@media only screen and (max-width:1080px) {
     body {
         display: grid;
     }
@@ -673,13 +681,15 @@ svg {
 
     h1 {
         text-align: center;
-        font-size: 10vw;
+        font-size: clamp(2rem,4rem,6rem);
     }
 
     hr {
-        width: 112px;
-        height: 18px;
-        margin-inline: 4px;
+        margin-bottom: 1vh;
+    }
+
+    hr {
+        width: 25vw;
     }
 
     svg {
@@ -744,17 +754,12 @@ svg {
         margin-top: min(135px, clamp(45vw,300px,55vw));
     }
 
-    p {
-        font-family: "Fjord One";
-        font-size: 20px;
-    }
-
     .about .text {
         width: 100vw;
     }
 
     .about img {
-        width: 360px;
+        width: 620px;
         height: auto;
     }
 
@@ -767,18 +772,8 @@ svg {
         height: 100%;
     }
 
-    .education .container {
-        display: flex;
-        flex-flow: column;
-    }
-
     .education .contents {
-        display: flex;
-        flex-flow: column;
-        align-items: center;
-        justify-content: center;
         height: 100%;
-        width: auto;
     }
 
     .education .contents .summary {
@@ -787,73 +782,6 @@ svg {
 
     .education .contents .summary svg {
         width: max(50px, 7%);
-        height: auto;
-        transform: rotate(-90deg);
-        transition: 1s;
-    }
-
-    .education svg #arrow-big {
-        stroke: #EEE8A9;
-        stroke-width: 8;
-    }
-
-    .education svg #arrow-small {
-        stroke: #EEE8A9;
-        stroke-width: 5;
-        transform: translateY(-9px);
-    }
-
-    .education .contents.active .summary svg {
-        transform: rotate(0);
-    }
-
-    .education .contents .image {
-        height: 0;
-        opacity: 0;
-        transition: 1.5s;
-        margin-block: 0.5vh;
-    }
-
-    .education .contents .image img {
-        opacity: 0;
-        z-index: -10;
-        transition: 1.5s;
-        overflow: hidden;
-    }
-
-    .education .contents.active .image img {
-        overflow: hidden;
-        opacity: 1;
-        z-index: -10;
-    }
-
-    .education .contents.active .image {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background-color: #D9D9D9;
-        box-shadow: -8px -8px 2px 0px #C8C8C8;
-        width: 22vw;
-        min-width: 200px;
-        height: 55vh;
-        max-height: 300px;
-        opacity: 1;
-        margin-block: 1vh;
-        z-index: -20;
-    }
-
-    .education .textarea {
-        font-family: "Fjord One";
-        font-size: max(1rem, 1.2vw);
-        color: white;
-        margin-inline: 2vw;
-        padding-block: 1vh;
-        background-color: #068488;
-        box-shadow: -8px -8px 2px 0px #C8C8C8;
-        display: flex;
-        align-items: center;
-        z-index: 1;
-        cursor: pointer;
     }
 
     .skills {
@@ -865,11 +793,7 @@ svg {
     h3,
     h4,
     h5 {
-        font-family: "Halant";
-        font-weight: 900;
         font-size: clamp(1.5rem, 3.5vw, 3rem);
-        line-height: 105%;
-        text-align: center;
     }
 
     .group-skills {
@@ -894,146 +818,38 @@ svg {
         margin-top: 1.5vh;
         padding-left: 4vw;
         padding-block: 0vh;
-        font-size: 1rem;
-        list-style: disc;
-        background-color: #068488;
-        box-shadow: -8px -8px 2px 0px #C8C8C8;
-    }
-
-    .main-skills hr {
-        margin-inline: 0;
-        border: none;
-        width: 100%;
-    }
-
-    .skills-tools li {
-        display: flex;
-        align-items: center;
-    }
-
-    .skills-details {
-        padding-left: 1vw;
-        font-size: 0.8rem;
-    }
-
-    .skills-details li {
-        display: flex;
-        align-items: center;
     }
 
     .skills-details svg,
     .main-skills svg {
         width: min(4vw, 20px);
-        height: auto;
-    }
-
-    .projects .header {
-        display: flex;
-        flex-flow: column;
-        justify-content: center;
-    }
-
-    .projects h1 {
-        margin-left: 4vw;
-        z-index: 1;
-        line-height: 90%;
     }
 
     .project-container {
-        display: flex;
         width: 100%;
         height: auto;
-        justify-content: center;
-        align-items: center;
         flex-flow: row wrap;
     }
 
     .project-content {
         margin: 4vw;
         padding-block: 4vw;
-        background-color: #D9D9D9;
-        box-shadow: -8px -8px 2px 0px #C8C8C8;
         width: 72vw;
         height: auto;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-flow: column;
-        padding-inline: 1vw;
-    }
-
-    .content-header {
-        display: flex;
-        background-color: #068488;
-        width: 100%;
-        height: 14%;
-        align-items: center;
-        justify-content: center;
-    }
-
-    h6 {
-        font-family: "Halant";
-        font-weight: 900;
-        font-size: 2rem;
-        letter-spacing: 0.1rem;
-        color: white;
-        text-align: center;
-        line-height: 100%;
-    }
-
-    .projects .project-content .image {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 90%;
-        height: auto;
-        background-color: white;
-    }
-
-    .projects .project-content hr {
-        height: 1%;
     }
 
     .projects .project-content p {
-
         font-size: 1rem;
         height: auto;
         width: 90%;
     }
 
     .project-content a {
-        background-color: #068488;
-        display: flex;
-        align-self: flex-start;
-        align-items: center;
-        text-decoration: none;
-        color: #EEE8A9;
-        margin-left: 5%;
         width: 50%;
-        height: 6%;
-        font-weight: bold;
-        letter-spacing: 0.05em;
-        justify-content: center;
-    }
-
-    .project-content a:hover,
-    svg {
-        text-shadow: #EEE8A9 0 0 1.5px;
     }
 
     .project-content a svg {
         width: 23%;
-        height: auto;
-        stroke: #EEE8A9;
-        stroke-width: 6;
-    }
-
-    .project-content a:hover svg {
-        filter: drop-shadow(0px 0px 4px #EEE8A9);
-    }
-
-    .hidden {
-        opacity: 0;
     }
 
     .contact {
@@ -1046,78 +862,12 @@ svg {
         margin-bottom: 15vh;
     }
 
-    .contact .header {
-        display: flex;
-        flex-flow: column;
-        justify-content: center;
-    }
-
-    .contact h1 {
-        font-family: "Halant";
-        font-weight: 900;
-        line-height: 90%;
-        margin-left: 1.2vw;
-    }
-
     .message-wrapper {
         margin: 0px;
         padding: 0px;
         align-items: start;
         height: fit-content;
         width: fit-content;
-    }
-
-    .message-items {
-        background-color: #068488;
-        box-shadow: -8px -8px 2px 0px #C8C8C8;
-    }
-
-    .name-box,
-    .mail-box,
-    .subject-box {
-        color: white;
-        margin: 2%;
-        margin-top: 4%;
-        padding: 1%;
-        width: 45%;
-        outline: none;
-        resize: none;
-        background-color: #069499;
-        border: 1px solid #068488;
-    }
-
-    .subject-box {
-        color: white;
-        margin: 2%;
-        width: 95%;
-    }
-
-    .message-box {
-        color: white;
-        margin: 2%;
-        padding: 1%;
-        outline: none;
-        resize: none;
-        width: 95%;
-        background-color: #069499;
-        border: 1px solid #068488;
-    }
-
-    .submit-button {
-        float: right;
-        margin-right: 3%;
-        margin-top: 2%;
-        padding: 1%;
-        padding-inline: 2%;
-        margin-bottom: 4%;
-        background-color: #069499;
-        border: 1px solid #068488;
-        color: #EEE8A9;
-    }
-
-    .submit-button:hover {
-        cursor: pointer;
-        text-shadow: #EEE8A9 0px 0px 1.5px;
     }
 
     .contact .info {
@@ -1134,18 +884,13 @@ svg {
     }
 
     .contact .address {
-        display: flex;
-        flex-wrap: wrap;
         padding: 1%;
         width: 94%;
         height: 20%;
-        background-color: #D9D9D9;
-        box-shadow: -8px -8px 2px 0px #C8C8C8;
     }
 
     .contact .address p {
         font-size: 1.2rem;
-        padding-left: 2%;
         width: 91%;
     }
 
