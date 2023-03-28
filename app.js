@@ -9,7 +9,7 @@ const skillBoxes = document.querySelectorAll(".main-skills")
 const sectionList = document.querySelectorAll("section")
 const sectionSkills = sectionList[2]
 
-const mediaWidth = window.matchMedia("(max-width: 900px)")
+const mediaWidth = window.matchMedia("(max-width: 1080px)")
 
 const projectContent = document.querySelectorAll(".project-content")
 const hidden = document.querySelector(".hidden")
@@ -49,8 +49,9 @@ window.addEventListener("scroll", function (e) {
         }
     })
     const sectionSkills = sectionList[2]
+    console.log(sectionSkills);
 
-    if (mediaWidth.matches && (sectionSkills.offsetTop - sectionSkills.clientHeight / 2) < scrollY && scrollY < (sectionSkills.offsetTop + sectionSkills.clientHeight)) {
+    if (mediaWidth.matches && (sectionSkills.offsetTop - sectionSkills.clientHeight) < scrollY && scrollY < (sectionSkills.offsetTop + sectionSkills.clientHeight)) {
         var pos = (scrollY - sectionSkills.offsetTop)
         //console.log(pos)
         skillBoxes[0].style.transform = "translateX(" + pos + "px)"
@@ -72,7 +73,7 @@ window.addEventListener("scroll", function (e) {
             skillBoxes[2].style.transform = "translateX(" + pos + "px)"
         }
     }
-
+    //Projects Animation
     if (scrollY >= sectionList[3].offsetTop - (sectionList[3].clientHeight / 2)) {
         projectContent.forEach(function (item, index) {
             let delay = 1.5 + (index / 1.5);
