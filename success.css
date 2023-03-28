@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #D9D9D9;
+}
+
+ul {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    height: 180px;
+    background-color: #068488;
+    list-style: none;
+    line-height: 50px;
+    box-shadow: -8px -8px 2px 0px #C8C8C8;
+    color: white;
+}
+
+ul li a {
+    background-color: #069499;
+    border: 1px solid #068488;
+    color: #EEE8A9;
+    padding: 8px;
+    text-decoration: none;
+}
+
+ul li a:hover {
+    cursor: pointer;
+    text-shadow: #EEE8A9 0px 0px 1.5px;
+}
