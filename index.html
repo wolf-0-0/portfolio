@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,6 +10,7 @@
     <link href='https://fonts.googleapis.com/css?family=Halant' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Fjord One' rel='stylesheet'>
 </head>
+
 <body>
     <nav class="navigation">
         <ul>
@@ -460,15 +462,15 @@
             </div>
         </div>
         <div class="message-wrapper">
-            <div class="message-items">
-                <textarea class="name-box" id="name-box" cols="30" rows="1" placeholder="Name"></textarea>
-                <textarea class="mail-box" id="mail-box" cols="30" rows="1" placeholder="E-mail"></textarea>
+            <form class="message-items" name="contact" method="POST" data-netlify="true">
+                <textarea class="name-box" id="name-box" cols="30" rows="1" placeholder="Name" type="text" name="name"></textarea>
+                <textarea class="mail-box" id="mail-box" cols="30" rows="1" placeholder="E-mail" type="email" name="email"></textarea>
                 <br>
                 <textarea class="subject-box" id="subject-box" cols="30" rows="1" placeholder="Subject"></textarea>
                 <textarea class="message-box" id="message-box" placeholder="Message" spellcheck="true" cols="94"
-                    rows="18"></textarea> <br>
+                    rows="18" name="message"></textarea> <br>
                 <button class="submit-button" type="submit">Send</button>
-            </div>
+            </form>
         </div>
         <div class="info">
             <div>
@@ -582,4 +584,5 @@
 </body>
 <script src="./app.js">
 </script>
+
 </html>
