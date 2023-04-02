@@ -632,36 +632,23 @@ svg {
 }
 
 /*#endregion*/
-/*#region MEDIA ONLY*/
-/*@media only screen and (max-width:1499px) {
-    section{
-        height: 810px;
-        width: 92vw;
-    }
-    .message-wrapper {
-        margin: 0px;
-        padding-top: 14vh;
-        align-items: start;
-        height: fit-content;
-        width: fit-content;
-    }
-
-}*/
 @media only screen and (max-width:1080px) {
     body {
         display: flex;
         justify-content: center;
         align-items: center;
         flex-flow: column;
+        width: 100vw;
     }
 
     section {
         float: none;
-        width: 98vw;
+        width: 100vw;
         height: auto;
         display: flex;
         flex-flow: row wrap;
         justify-content: center;
+        margin-left: 4%;
     }
 
     h1 {
@@ -682,7 +669,7 @@ svg {
 
     .navigation {
         position: fixed;
-        width: 100vw;
+        width: 110vw;
         height: 10vh;
         bottom: 0;
         background-color: #068488;
@@ -869,15 +856,17 @@ svg {
 
     .contact .address {
         width: 90%;
+        padding: 0;
     }
 
     .contact .address li {
         padding: 1vw;
-
+        width: fit-content;
     }
     .contact .address li span {
         display: flex;
         align-items: center;
+        word-break: break-all;
     }
 
 }
