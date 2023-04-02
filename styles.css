@@ -31,7 +31,9 @@ h1 {
     font-weight: 900;
     font-size: 5.8rem;
     line-height: 90%;
-    padding-left: 1%;
+    width: fit-content;
+    z-index: 1;
+    padding-right: min(2.5vw,25px);
 }
 
 .header {
@@ -40,6 +42,8 @@ h1 {
     display: flex;
     flex-flow: column;
     justify-content: center;
+    align-items: center;
+    width: fit-content;
 }
 
 p {
@@ -48,13 +52,15 @@ p {
 }
 
 hr {
-    width: 8vw;
+    width: 150px;
     height: 2vh;
     margin-right: 3%;
 }
 
 .underline {
     display: flex;
+    margin-bottom: 1%;
+    width: inherit;
 }
 
 .orange {
@@ -72,11 +78,18 @@ hr {
     background-color: #171219;
 }
 
+.header h1 {
+    display: flex;
+    align-self: center;
+}
+
 /*#endregion*/
 /*#region ABOUT*/
 
 .about .header {
     grid-row: 2 / span 2;
+    display: block;
+    line-height: 1%;
 }
 
 .about .header .top {
@@ -108,7 +121,7 @@ hr {
 }
 
 .picture img {
-    width: 460px;
+    width: 480px;
     height: 400px;
     background-color: #D9D9D9;
     box-shadow: -8px -8px 2px 0px #C8C8C8;
@@ -214,10 +227,6 @@ hr {
 
 /*#endregion*/
 /*#region EDUCATION*/
-
-.education .header h1 {
-    margin-left: 0.8vw;
-}
 
 .education .container {
     grid-column: 3/ span 20;
@@ -364,6 +373,7 @@ h5 {
     list-style: disc;
     background-color: #068488;
     box-shadow: -8px -8px 2px 0px #C8C8C8;
+    line-height: 200%;
 }
 
 .main-skills hr {
@@ -397,19 +407,6 @@ h5 {
 /*#endregion*/
 /*#region PROJECTS*/
 
-.projects .header {
-    grid-column: 2 / span 7;
-    grid-row: 1 / span 2;
-    display: flex;
-    flex-flow: column;
-    justify-content: center;
-}
-
-.projects h1 {
-    margin-left: 4vw;
-    z-index: 1;
-    line-height: 90%;
-}
 
 .project-container {
     grid-column: 2/ span 22;
@@ -438,7 +435,7 @@ h5 {
     display: flex;
     background-color: #068488;
     width: 100%;
-    height: 14%;
+    height: 15%;
     align-items: center;
     justify-content: center;
 }
@@ -446,11 +443,12 @@ h5 {
 h6 {
     font-family: "Halant";
     font-weight: 900;
-    font-size: 2rem;
+    font-size: 1.8rem;
     letter-spacing: 0.1rem;
     color: white;
     text-align: center;
-    line-height: 100%;
+    text-justify: auto;
+    padding: 2%;
 }
 
 .projects .project-content .image {
@@ -470,6 +468,7 @@ h6 {
     font-size: 16px;
     height: 25%;
     width: 90%;
+    margin-bottom: 5%;
 }
 
 .project-content a {
@@ -509,21 +508,6 @@ svg {
 
 /*#endregion*/
 /*#region CONTACTS*/
-
-.contact .header {
-    grid-column: 2 / span 7;
-    grid-row: 1 / span 2;
-    display: flex;
-    flex-flow: column;
-    justify-content: center;
-}
-
-.contact h1 {
-    font-family: "Halant";
-    font-weight: 900;
-    line-height: 90%;
-    margin-left: 1.2vw;
-}
 
 .message-wrapper {
     grid-column: 2 / span 9;
@@ -615,10 +599,11 @@ svg {
 
 .contact .address span {
     font-size: 1.5rem;
+    width: 80%;
 }
 
-.contact svg {
-    width: 6%;
+.contact li svg {
+    width: 7%;
     height: auto;
     margin-right: 5%;
     transition: 0.1s;
@@ -680,16 +665,11 @@ svg {
     }
 
     h1 {
-        text-align: center;
         font-size: clamp(2rem,4rem,6rem);
     }
 
     hr {
-        margin-bottom: 1vh;
-    }
-
-    hr {
-        width: 25vw;
+        width: 125px;
     }
 
     svg {
@@ -697,9 +677,6 @@ svg {
     }
 
     .header {
-        display: flex;
-        flex-flow: column;
-        justify-content: center;
         margin-top: 4%;
     }
 
@@ -710,7 +687,7 @@ svg {
         bottom: 0;
         background-color: #068488;
         align-items: center;
-        z-index: 100;
+        z-index: 2;
         margin: 0px;
         padding: 0px;
     }
@@ -727,7 +704,7 @@ svg {
 
     .navigation ul li {
         width: 16vw;
-        height: 16vw;
+        height: 10vh;
         margin: 0px;
         padding: 0px;
     }
@@ -747,10 +724,19 @@ svg {
         display: none;
     }
 
-    .about .text {
-        width: 100vw;
+    .about .header{
+        display: flex;
+        align-items: center;
+    } 
+
+    .about {
+        align-items: center;
+        flex-flow: column;
     }
 
+    .about .introduction {
+        text-align: center;
+    }
 
     .about img {
         width: 360px;
@@ -765,7 +751,9 @@ svg {
         width: 100%;
         height: 100%;
     }
-
+    .education .container {
+        margin-top: 1vh;
+    }
     .education .contents {
         height: 100%;
     }
@@ -799,7 +787,7 @@ svg {
     }
 
     .main-skills {
-        width: max(300px,60%);
+        width: max(360px,60%);
         height: auto;
         font-size: clamp(1rem, 2.5vw, 2rem);
         margin-inline: 10%;
@@ -811,7 +799,8 @@ svg {
     .skills-list {
         margin-top: 1.5vh;
         padding-left: 4vw;
-        padding-block: 0vh;
+        padding-block: 1vh;
+        line-height: 150%;
     }
 
     .skills-details svg,
@@ -837,6 +826,7 @@ svg {
         font-size: 1rem;
         height: auto;
         width: 90%;
+        margin-bottom: 0;
     }
 
     .project-content a {
@@ -861,7 +851,7 @@ svg {
         padding: 0px;
         align-items: start;
         height: fit-content;
-        width: fit-content;
+        width: 90%;
     }
 
     .contact .info {
@@ -869,12 +859,21 @@ svg {
         margin-top: 0px;
         align-items: center;
         justify-content: center;
-        padding-left: 4%;
     }
 
     .contact .info p {
         padding: 0%;
         font-size: 1.6rem;
+        text-align: center;
+    }
+
+    .contact .address {
+        width: 90%;
+    }
+
+    .contact .address li {
+        padding: 1vw;
+
     }
     .contact .address li span {
         display: flex;
