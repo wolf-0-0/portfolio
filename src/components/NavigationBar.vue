@@ -62,12 +62,15 @@ export default {
 .navbar {
   display: flex;
   justify-content: space-between;
+  /* align-self: flex-end; */
   height: 10vh;
   width: 100%;
   bottom: 0;
   position: absolute;
-  align-items: center;
+  /* align-items: center; */
   background-color: #068488;
+  z-index: 1000;
+  padding-inline: 1rem;
 }
 
 svg {
@@ -148,7 +151,7 @@ svg {
     justify-content: space-evenly;
     flex-direction: column;
     flex-wrap: wrap;
-    height: 100%;
+    height: 100vh;
     width: 10vw;
   }
 
