@@ -8,9 +8,14 @@ body {
     min-height: 100vh;
 }
 
-/* #app {
-    display: block;
-} */
+html {
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
 
 @media only screen and (min-width:1200px) {
     #app {
