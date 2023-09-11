@@ -44,14 +44,17 @@ export default {
   flex-direction: column;
   align-items: left;
   justify-content: space-between;
-  gap: 1rem;
+  gap: 1.5rem;
   position: relative;
 }
 
 .content {
-  width: 82%;
   font-size: 0.9rem;
 }
+
+.title {
+    font-size: 1.9rem;
+  }
 
 .bg-box {
   position: absolute;
@@ -61,6 +64,7 @@ export default {
   margin-left: 0.4rem;
   border-radius: 0.4rem 0 0 0.4rem;
   padding-left: 0.4rem;
+  z-index: -1
 }
 
 .text-color {
@@ -72,7 +76,6 @@ export default {
 @media only screen and (min-width:450px) {
 
   .content {
-    width: 82%;
     font-size: 0.9rem;
   }
 
@@ -84,23 +87,7 @@ export default {
     max-width: 28rem;
   }
   .bg-box {
-    width: 150%;
-  }
-
-}
-
-@media only screen and (min-width:960px) {
-  .content {
-    width: 100%;
-    font-size: 0.9rem;
-  }
-
-  .title {
-    font-size: 1.9rem;
-  }
-
-  .card-left {
-    max-width: 30rem;
+    width: 120%;
   }
 
 }
@@ -114,7 +101,7 @@ export default {
   }
 
   .bg-box {
-    width: 35rem;
+    width: 150%;
   }
 }
 </style>

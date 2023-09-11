@@ -1,18 +1,31 @@
 <template>
-  <nav class="navbar">
-    <router-link class="router-link" v-for="(item, index) in navItems" :key="index" :to="item.to">
-      <svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path v-for="(svgItem, index) in item.svgData" class="icon" :d="svgItem" :key="index" />
-      </svg>
-      <span class="tooltip">{{ item.text }}</span>
-    </router-link>
-  </nav>
+  <i class="fa-solid fa-bars absolute top-3 left-3 sm:hidden" @click="toggleNavbar"></i>
+  <aside
+    :class="{ 'translate-x-0': isSidebarOpen, '-translate-x-full': !isSidebarOpen }"
+    class="fixed top-0 left-0 z-40 h-full w-48 transition-transform -translate-x-full sm:translate-x-0"
+    >
+    <i class="fa-solid fa-xmark absolute top-4 left-36 sm:hidden" @click="toggleNavbar"></i>
+    <nav class="navbar h-full px-3 py-4 overflow-y-auto flex flex-col justify-center">
+      <router-link class="router-link flex items-center p-2" v-for="(item, index) in navItems" :key="index" :to="item.to">
+        <svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path v-for="(svgItem, index) in item.svgData" class="icon" :d="svgItem" :key="index" />
+        </svg>
+        <span class="ml-3">{{ item.text }}</span>
+      </router-link>
+    </nav>
+  </aside>
 </template>
 
 <script>
 export default {
+  methods: {
+    toggleNavbar () {
+      this.isSidebarOpen = !this.isSidebarOpen
+    }
+  },
   data () {
     return {
+      isSidebarOpen: false,
       navItems: [
         {
           text: 'About',
@@ -50,7 +63,6 @@ export default {
           ],
           to: '/contact'
         }
-        // Add more items as needed
       ]
     }
   }
@@ -58,19 +70,16 @@ export default {
 </script>
 
 <style scoped>
-/* CSS styles specific to this component */
 .navbar {
-  display: flex;
-  justify-content: space-between;
-  /* align-self: flex-end; */
-  height: 10vh;
-  width: 100%;
-  bottom: 0;
-  position: absolute;
-  /* align-items: center; */
   background-color: #068488;
-  z-index: 1000;
-  padding-inline: 1rem;
+}
+
+.fa-bars, .fa-xmark {
+  font-size: 1.4rem;
+  color: #7ED183;
+  padding: 0.3rem 0.4rem;
+  border-radius: 6px;
+  background-color: #068488;
 }
 
 svg {
@@ -84,93 +93,23 @@ svg {
 
 .icon {
   fill: #068488;
-  stroke: #EEE8A9;
+  stroke: #7ED183;
   stroke-width: 0.2rem;
 }
 
-.router-link {
-  position: relative;
-  height: fit-content;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: 0.25s;
+span {
+  color: #7ED183;
 }
 
 .router-link.router-link-exact-active svg,
-.router-link.router-link-exact-active .icon {
-  filter: drop-shadow(0px 0px 4px #EEE8A9);
+.router-link.router-link-exact-active .icon,
+.router-link.router-link-exact-active span {
+  filter: drop-shadow(0px 0px 4px #7ED183);
 }
 
 .router-link:hover svg,
-.router-link:hover .icon {
-  filter: drop-shadow(0px 0px 4px #EEE8A9);
-}
-
-.tooltip {
-  position: absolute;
-  background-color: #068488;
-  padding: 0.2rem;
-  color: #EEE8A9;
-  border-radius: 8%;
-  font-weight: bold;
-  font-size: 0.8rem;
-  letter-spacing: 0.05rem;
-  transition: 0.5s;
-  opacity: 0;
-}
-
-.router-link:hover .tooltip,
-.router-link.router-link-exact-active .tooltip {
-  transform: translateY(-5.6vh);
-  opacity: 1;
-}
-
-@media only screen and (min-width:510px) {
-  .navbar {
-    padding-inline: 6%;
-  }
-}
-
-@media only screen and (min-width:610px) {
-  .navbar {
-    padding-inline: 8%;
-  }
-
-  svg {
-    width: 4rem;
-  }
-  .tooltip {
-    font-size: 1.2rem;
-  }
-}
-
-@media only screen and (min-width:960px) {
-  .navbar {
-    padding-inline: 0;
-    justify-content: space-evenly;
-    flex-direction: column;
-    flex-wrap: wrap;
-    height: 100vh;
-    width: 10vw;
-  }
-
-  svg {
-    width: 5rem;
-  }
-
-  .tooltip {
-    font-size: 1rem;
-  }
-}
-@media only screen and (min-width:1200px) {
-  .tooltip {
-    font-size: 1.2rem;
-  }
-}
-@media only screen and (min-width:1400px) {
-  .tooltip {
-    font-size: 1.4rem;
-  }
+.router-link:hover .icon,
+.router-link:hover span {
+  filter: drop-shadow(0px 0px 4px #7ED183);
 }
 </style>

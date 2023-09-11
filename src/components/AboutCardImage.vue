@@ -17,7 +17,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .card-right {
   z-index: 1;
   display: flex;
@@ -56,12 +56,6 @@ img {
 }
 
 @media only screen and (min-width:450px) {
-  .card-right {
-    max-width: 28rem;
-  }
-}
-
-@media only screen and (min-width:960px) {
   .card-right {
     max-width: 30rem;
   }
