@@ -1,5 +1,5 @@
 <template>
-  <a href="public/pdf/sousa_cedric_cv.pdf" download>
+  <a :href="pdfPath" download>
     <button>{{ title }}</button>
   </a>
 </template>
@@ -8,6 +8,11 @@
 export default {
   props: {
     title: String
+  },
+  data () {
+    return {
+      pdfPath: process.env.BASE_URL + 'pdf/sousa_cedric_cv.pdf'
+    }
   }
 }
 </script>

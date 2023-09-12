@@ -1,7 +1,7 @@
 <template>
-  <a :href="link">
+  <router-link :to="link">
     <button>{{ title }}</button>
-  </a>
+  </router-link>
 </template>
 
 <script>
