@@ -1,5 +1,5 @@
 <template>
-  <a href="@/assets/pdf/sousa_cedric_cv_portfolio.pdf" download>
+  <a href="public/pdf/sousa_cedric_cv.pdf" download>
     <button>{{ title }}</button>
   </a>
 </template>
