@@ -76,7 +76,7 @@ export default {
 
 .fa-bars, .fa-xmark {
   font-size: 1.4rem;
-  color: #7ED183;
+  color: #428370;
   padding: 0.3rem 0.4rem;
   border-radius: 6px;
   background-color: #068488;
@@ -93,23 +93,26 @@ svg {
 
 .icon {
   fill: #068488;
-  stroke: #7ED183;
+  stroke: #e4feff;
   stroke-width: 0.2rem;
 }
 
 span {
-  color: #7ED183;
-}
-
-.router-link.router-link-exact-active svg,
-.router-link.router-link-exact-active .icon,
-.router-link.router-link-exact-active span {
-  filter: drop-shadow(0px 0px 4px #7ED183);
+  color: #e4feff;
 }
 
 .router-link:hover svg,
 .router-link:hover .icon,
 .router-link:hover span {
-  filter: drop-shadow(0px 0px 4px #7ED183);
+  filter: drop-shadow(0px 0px 4px #e4feff);
 }
+
+.router-link.router-link-exact-active svg,
+.router-link.router-link-exact-active .icon,
+.router-link.router-link-exact-active span {
+  filter: drop-shadow(0px 0px 4px #e4feff);
+  stroke: #e4feff;
+  color: #e4feff;
+}
+
 </style>

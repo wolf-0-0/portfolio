@@ -60,7 +60,7 @@ export default {
   position: absolute;
   background-color: #068488;
   width: 100%;
-  color: #7ED183;
+  color: azure;
   margin-left: 0.4rem;
   border-radius: 0.4rem 0 0 0.4rem;
   padding-left: 0.4rem;

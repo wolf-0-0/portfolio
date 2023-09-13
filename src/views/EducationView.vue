@@ -94,7 +94,7 @@ export default {
 h1 {
   writing-mode: vertical-rl;
   text-orientation: upright;
-  color: #7ED183;
+  color: azure;
 }
 
 .card {
