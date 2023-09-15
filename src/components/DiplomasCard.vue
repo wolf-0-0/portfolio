@@ -27,8 +27,10 @@ h1 {
 
 .card {
   background-color: #47759C;
-  border-radius: 12px;
+  border-radius: 6px;
   min-width: 31rem;
+  border: 1px solid #408BC5;
+  box-shadow: 0px 0px 13px 4px rgba(57, 160, 237, 0.25);
 }
 
 @media (max-width: 768px) {

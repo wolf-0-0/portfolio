@@ -12,7 +12,7 @@
       </p>
     </div>
     <div class="w-full relative z-0 pt-4">
-      <hr class="absolute left-8" v-if="item.isOpen">
+      <hr class="absolute left-5" v-if="item.isOpen">
       <div class="inside-border mx-auto">
         <img :src="item.imagePath" class="w-32 md:w-64 h-0" :class="{ 'open': item.isOpen }">
       </div>
@@ -85,15 +85,21 @@ img {
   border-radius: 6px;
 }
 
-.open {
-  height: auto;
-}
-
 .inside-border {
   height: fit-content;
   width: fit-content;
   outline: solid 9px white;
   outline-offset: -9px;
   border-radius: 12px;
+}
+
+.open {
+  height: 22.4rem;
+}
+
+@media (max-width: 768px) {
+  .open {
+  height: 11.2rem;
+}
 }
 </style>
