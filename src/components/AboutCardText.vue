@@ -58,9 +58,11 @@ export default {
 
 .bg-box {
   position: absolute;
-  background-color: #068488;
+  background-color: #47759C;
+  border: 1px solid #39A0ED;
+  box-shadow: 0px 0px 13px 4px rgba(57, 160, 237, 0.25);
   width: 100%;
-  color: azure;
+  color: #39A0ED;
   margin-left: 0.4rem;
   border-radius: 0.4rem 0 0 0.4rem;
   padding-left: 0.4rem;
@@ -68,7 +70,7 @@ export default {
 }
 
 .text-color {
-  color: #068488;
+  color: #39A0ED;
   z-index: 2;
   margin-right: 2.5rem;
 }

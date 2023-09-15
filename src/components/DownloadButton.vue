@@ -22,17 +22,18 @@ button {
   width: fit-content;
   padding: 0.3rem 0.2rem;
   background-color: transparent;
-  color: #068488;
+  color: #39A0ED;
   border-radius: 0.4rem;
-  border: 4px solid #068488;
+  border: 4px solid #39A0ED;
   font-size: 1.1rem;
   margin-left: 1rem;
   transition: background-color 0.3s ease, color 0.3s ease;
+  box-shadow: 0px 0px 13px 4px rgba(57, 160, 237, 0.25);
 }
 
 button:hover {
   cursor: pointer;
-  color: azure;
-  background-color: #068488;
+  color: #47759C;
+  background-color: #39A0ED;
 }
 </style>

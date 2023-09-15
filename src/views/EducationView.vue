@@ -1,30 +1,8 @@
 <template>
-  <div class="background flex p-4 items-center min-h-screen overflow-y-scroll overflow-x-hidden sm:ml-48 ">
-    <div class="flex flex-col lg:flex-row w-full items-center justify-center gap-4">
-      <div class="card flex w-2/5 h-fit items-center">
-        <h1 class="text-8xl font-bold flex-shrink p-4">DIPLOMAS</h1>
-        <div class="flex flex-col gap-4 mx-auto">
-          <div v-for="(item, index) in items" :key="index">
-            <div class="flex items-center" @click="toggleAccordion(index)">
-              <svg :class="{ 'rotate': !item.isOpen }" width="43" height="41" viewBox="0 0 43 41" fill="none"
-                xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M25.1373 36.6427C23.404 39.7745 18.8878 39.7358 17.2047 36.5747L2.36957 8.71164C0.760994 5.69044 2.96728 2.04993 6.38904 2.07927L36.5018 2.33744C39.9235 2.36677 42.0714 6.04462 40.4149 9.03783L25.1373 36.6427Z"
-                  stroke="#E4FEFF" stroke-width="3.00884" />
-              </svg>
-              <p class="pl-4 text-3xl font-bold">
-                Bachelor in Telecommunication
-              </p>
-            </div>
-            <div class="w-full border-white relative pt-4">
-              <hr class="absolute" v-if="item.isOpen">
-              <img src="@/assets/images/diplomas-1.png" class="mx-auto w-80 h-0" :class="{ 'open': item.isOpen }">
-            </div>
-          </div>
-        </div>
-      </div>
+  <div class="flex px-4 p-16 sm:ml-48 md:px-8 items-center justify-center min-h-screen overflow-y-scroll overflow-x-hidden">
+    <div class="flex flex-col lg:flex-row w-full items-center justify-center gap-4 lg:max-w-7xl">
+      <DiplomasCard />
       <div class="flex w-3/5  h-fit items-center">
-        <h1 class="cert text-7xl font-bold  w-96 h-fit flex items-center justify-center">CERTIFICATES</h1>
         <div class="cert-list h-full w-full">
           <div class="flex cert w-11/12 mx-auto">
             <svg class=" w-40" width="65" height="62" viewBox="0 0 65 62" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -92,7 +70,6 @@
                 <div>
                   <h2 class="title">{{ cert.title }}</h2>
                   <p class="cap4lab">{{ cert.company }}</p>
-
                 </div>
               </div>
             </div>
@@ -104,27 +81,19 @@
 </template>
 
 <script>
+import DiplomasCard from '../components/DiplomasCard.vue'
+
 export default {
+  components: {
+    DiplomasCard
+  },
   data () {
     return {
-      items: Array(3).fill().map(() => ({ isOpen: false })), // Initialize with 3 items
       tags: Array(18).fill('JavaScript'), // Initialize with 18 items 16
       certs: Array(16).fill({
         title: 'Linux Tools for Software Developement',
         company: 'EDX 2022'
       })
-    }
-  },
-  methods: {
-    toggleAccordion (index) {
-      // Close all items first
-      this.items.forEach((item, i) => {
-        if (i !== index) {
-          item.isOpen = false
-        }
-      })
-      // Toggle the clicked item
-      this.items[index].isOpen = !this.items[index].isOpen
     }
   }
 }
@@ -164,50 +133,5 @@ span {
   padding: 0 0.4rem;
   border-radius: 16px;
   background-color: #1ABCFE;
-}
-
-.background {
-  background: linear-gradient(270deg, #068488 0%, #FFF 100%);
-}
-
-h1 {
-  writing-mode: vertical-rl;
-  text-orientation: upright;
-  color: azure;
-  border-right: 2px solid azure;
-}
-
-p {
-  color: azure;
-}
-
-svg {
-  transition: transform 1.5s;
-}
-
-.rotate {
-  transform: rotate(-90deg);
-}
-
-hr {
-  height: 90%;
-  border: 1px solid azure;
-  top: 50%;
-  left: 18px;
-  transform: translateY(-50%);
-}
-
-img {
-  transition: 1.5s;
-  border-radius: 6px;
-}
-
-.open {
-  height: 28.2rem;
-}
-
-.card {
-  background-color: #068488;
-  border-radius: 12px;
 }
 </style>

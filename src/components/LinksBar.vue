@@ -15,6 +15,7 @@
 .fa-square-github {
   font-size: 2rem;
   transition: scale 0.1s ease;
+  color: black;
 
 }
 

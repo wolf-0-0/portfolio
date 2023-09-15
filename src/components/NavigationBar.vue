@@ -71,19 +71,21 @@ export default {
 
 <style scoped>
 .navbar {
-  background-color: #068488;
+  background-color: #47759C;
+  border-right: 1px solid #39A0ED;
+  box-shadow: 0px 0px 13px 4px rgba(57, 160, 237, 0.25);
 }
 
 .fa-bars, .fa-xmark {
   font-size: 1.4rem;
-  color: #428370;
+  color: #47759C;
   padding: 0.3rem 0.4rem;
   border-radius: 6px;
-  background-color: #068488;
+  background-color: #39A0ED;
 }
 
 svg {
-  background-color: #068488;
+  background-color: #47759C;
   width: 3rem;
   height: auto;
   border-radius: 50%;
@@ -92,27 +94,27 @@ svg {
 }
 
 .icon {
-  fill: #068488;
-  stroke: #e4feff;
+  fill: #47759C;
+  stroke: #39A0ED;
   stroke-width: 0.2rem;
 }
 
 span {
-  color: #e4feff;
+  color: #39A0ED;
 }
 
 .router-link:hover svg,
 .router-link:hover .icon,
 .router-link:hover span {
-  filter: drop-shadow(0px 0px 4px #e4feff);
+  filter: drop-shadow(0px 0px 4px #39A0ED);
 }
 
 .router-link.router-link-exact-active svg,
 .router-link.router-link-exact-active .icon,
 .router-link.router-link-exact-active span {
-  filter: drop-shadow(0px 0px 4px #e4feff);
-  stroke: #e4feff;
-  color: #e4feff;
+  filter: drop-shadow(0px 0px 4px #39A0ED);
+  stroke: #39A0ED;
+  color: #39A0ED;
 }
 
 </style>
