@@ -1,5 +1,5 @@
 <template>
-  <div class="flex p-4 justify-center min-h-screen overflow-y-scroll overflow-x-hidden sm:ml-48 ">
+  <ViewMainCard>
     <div class="p-4 flex flex-col lg:flex-row justify-center items-center gap-4">
       <div class="lg:w-1/2">
         <AboutCardText :title1="title1" :title-box="titleBox" :title2="title2" :titleColor="titleColor"
@@ -9,15 +9,17 @@
         <AboutCardImage :imagePath="imagePath" />
       </div>
     </div>
-  </div>
+  </ViewMainCard>
 </template>
 
 <script>
 import AboutCardText from '../components/AboutCardText.vue'
 import AboutCardImage from '../components/AboutCardImage.vue'
+import ViewMainCard from '../components/ViewMainCard.vue'
 
 export default {
   components: {
+    ViewMainCard,
     AboutCardText,
     AboutCardImage
   },

@@ -13,8 +13,8 @@
 </template>
 
 <script>
-import DownloadButton from '../components/DownloadButton.vue'
-import LinkButton from '../components/LinkButton.vue'
+import DownloadButton from './DownloadButton.vue'
+import LinkButton from './LinkButton.vue'
 
 export default {
   components: {

@@ -1,7 +1,7 @@
 <template>
-  <div class="card lg:w-96 h-fit">
+  <div class="card flex flex-col w-96 h-fit">
     <div class="mx-auto w-fit my-1">
-      <svg width="65" height="62" viewBox="0 0 65 62" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg class=" w-20" width="65" height="62" viewBox="0 0 65 62" fill="none" xmlns="http://www.w3.org/2000/svg">
         <g clip-path="url(#clip0_177_186)">
           <path fill-rule="evenodd" clip-rule="evenodd"
             d="M16.25 46.5C16.25 42.2199 19.8877 38.75 24.375 38.75H32.5V46.5C32.5 50.7801 28.8622 54.25 24.375 54.25C19.8877 54.25 16.25 50.7801 16.25 46.5Z"
@@ -27,24 +27,27 @@
       </svg>
     </div>
     <div class="header">
-      <h2 class="text-center my-1">Full-Stack Developer</h2>
+      <h2 class="text-center py-1">Full-Stack Developer</h2>
     </div>
     <div class="paragraph">
-      <p class="text-center">
+      <p class="text-center p-1  text-sm">
         Some text about how informative and great this formation was, in fact so great it changed my life completely. Or
         maybe not! Or maybe not!
       </p>
     </div>
-    <div class="flex flex-wrap justify-center gap-1 my-1">
-      <span class="text-xs px-3" v-for="(tag, index) in tags" :key="index">
-        {{ tag }}
-      </span>
+    <div class="flex flex-wrap justify-center gap-2  p-2">
+      <TagComponent v-for="(tag, index) in tags" :key="index" :tag="tag" />
     </div>
   </div>
 </template>
 
 <script>
+import TagComponent from './TagComponent.vue'
+
 export default {
+  components: {
+    TagComponent
+  },
   props: {
     tags: Array
   }
@@ -72,8 +75,4 @@ export default {
   border-bottom: 3px solid #408BC5;
 }
 
-span {
-  border-radius: 16px;
-  background-color: #408BC5;
-}
 </style>

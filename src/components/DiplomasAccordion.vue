@@ -1,6 +1,6 @@
 <template>
   <div v-for="(item, index) in items" :key="index">
-    <div class="pl-2 flex items-center" @click="toggleAccordion(index)">
+    <button class="pl-2 flex items-center" @click="toggleAccordion(index)">
       <svg class="w-8 h-8" :class="{ 'rotate': !item.isOpen }" width="43" height="41" viewBox="0 0 43 41" fill="none"
         xmlns="http://www.w3.org/2000/svg">
         <path
@@ -10,7 +10,7 @@
       <p class="pl-4 text-xs font-bold md:text-lg ">
         {{ item.title }}
       </p>
-    </div>
+    </button>
     <div class="w-full relative z-0 pt-4">
       <hr class="absolute left-5" v-if="item.isOpen">
       <div class="inside-border mx-auto">
@@ -82,7 +82,7 @@ hr {
 
 img {
   transition: 1.5s;
-  border-radius: 6px;
+  border-radius: 12px;
 }
 
 .inside-border {

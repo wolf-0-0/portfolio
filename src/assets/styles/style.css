@@ -6,7 +6,6 @@
 
 body {
     min-height: 100vh;
-    /* background: linear-gradient(108deg, #7ED183 26.21%, #068488 123.39%); */
     background-color: #4E5F74;
     color: black;
 }
@@ -15,3 +14,4 @@ a {
     text-decoration: none;
     color: black;
 }
+
